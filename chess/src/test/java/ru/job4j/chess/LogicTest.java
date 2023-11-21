@@ -10,7 +10,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class LogicTest {
 
     @Test
-    public void whenMoveThenFigureNotFoundException() throws FigureNotFoundException, OccupiedCellException, ImpossibleMoveException {
+    public void whenMoveThenFigureNotFoundException()
+            throws FigureNotFoundException, OccupiedCellException, ImpossibleMoveException {
         Logic logic = new Logic();
         FigureNotFoundException exception = assertThrows(FigureNotFoundException.class, () -> {
             logic.move(Cell.C1, Cell.H6);
@@ -19,7 +20,8 @@ public class LogicTest {
     }
 
     @Test
-    public void whenMoveThenOccupiedCellException() throws FigureNotFoundException, OccupiedCellException, ImpossibleMoveException {
+    public void whenMoveThenOccupiedCellException()
+            throws FigureNotFoundException, OccupiedCellException, ImpossibleMoveException {
         Logic logic = new Logic();
         BishopBlack bishop1 = new BishopBlack(Cell.C1);
         BishopBlack bishop2 = new BishopBlack(Cell.D2);
@@ -33,7 +35,8 @@ public class LogicTest {
     }
 
     @Test
-    public void whenMoveThenImpossibleMoveException() throws FigureNotFoundException, OccupiedCellException, ImpossibleMoveException {
+    public void whenMoveThenImpossibleMoveException()
+            throws FigureNotFoundException, OccupiedCellException, ImpossibleMoveException {
         Logic logic = new Logic();
         BishopBlack bishop = new BishopBlack(Cell.C1);
         logic.add(bishop);
